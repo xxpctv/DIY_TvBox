@@ -17,7 +17,8 @@ import com.kingja.loadsir.core.LoadSir;
 import com.orhanobut.hawk.Hawk;
 
 import java.io.File;
-
+import com.github.tvbox.osc.util.LOG;
+import com.p2p.P2PClass;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
 
@@ -28,9 +29,22 @@ import me.jessyan.autosize.unit.Subunits;
  */
 public class App extends MultiDexApplication {
     private static App instance;
-
+private static P2PClass p;
+    public static String burl;
     @Override
     public void onCreate() {
+        }
+         public static P2PClass getp2p() {
+        try {
+            if (p == null) {
+                p = new P2PClass(instance.getExternalCacheDir().getAbsolutePath());
+            }
+            return p;
+        } catch (Exception e) {
+            LOG.e(e.toString());
+            return null;
+        }
+    }
         super.onCreate();
         instance = this;
         initParams();
@@ -45,13 +59,13 @@ public class App extends MultiDexApplication {
         //初始化数据库
         AppDataManager.init();
         LoadSir.beginBuilder()
-                .addCallback(new EmptyCallback())
-                .addCallback(new LoadingCallback())
-                .commit();
+                。addCallback(new EmptyCallback())
+                。addCallback(new LoadingCallback())
+                。commit();
         AutoSizeConfig.getInstance().setCustomFragment(true).getUnitsManager()
-                .setSupportDP(false)
-                .setSupportSP(false)
-                .setSupportSubunits(Subunits.MM);
+                。setSupportDP(false)
+                。setSupportSP(false)
+                。setSupportSubunits(Subunits.MM);
         PlayerHelper.init();
 
         // Delete Cache
