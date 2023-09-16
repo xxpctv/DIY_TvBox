@@ -41,10 +41,10 @@ cp $CURRENT_DIR/DIY/T/activity_home.xml $CURRENT_DIR/$DIR/app/src/main/res/layou
 cp $CURRENT_DIR/DIY/T/HomeActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 # 默认设置修改
-cp $CURRENT_DIR/DIY/T/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java 
+#cp $CURRENT_DIR/DIY/T/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java 
 
 # 整体布局修改
-cp $CURRENT_DIR/DIY/T/BaseActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/BaseActivity.java 
+#cp $CURRENT_DIR/DIY/T/BaseActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/BaseActivity.java 
 
 # 直播添加epg112114支持
 #cp $CURRENT_DIR/DIY/T/LivePlayActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
@@ -56,7 +56,7 @@ cp $CURRENT_DIR/DIY/T/BaseActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/
 #sed -i 's/3.0/2.0/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
 
 #版本号修改
-sed -i 's/versionName "1.0."/versionName "1."/g' $CURRENT_DIR/$DIR/app/build.gradle
+#sed -i 's/versionName "1.0."/versionName "1."/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #FongMi的jar支持
 #echo "" >>$CURRENT_DIR/$DIR/app/proguard-rules.pro
