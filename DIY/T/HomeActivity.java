@@ -85,6 +85,7 @@ import org.json.JSONObject;
 import com.google.gson.JsonObject;
 import android.util.Log;
 
+
 import me.jessyan.autosize.utils.AutoSizeUtils;
 
 public class HomeActivity extends BaseActivity {
@@ -348,8 +349,6 @@ public class HomeActivity extends BaseActivity {
 
     private boolean dataInitOk = false;
     private boolean jarInitOk = false;
-    
-
 
     // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
@@ -363,8 +362,8 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void initData() {
-                            
-    //    首页增加每日一言      
+
+ //    首页增加每日一言      
             String tvtalurl = ApiConfig.get().daily_sentence;            
             UrlHttpUtil.get(tvtalurl, new CallBackUtil.CallBackString() {
                    public void onFailure(int i, String str) {
@@ -457,7 +456,7 @@ public class HomeActivity extends BaseActivity {
 
                     }
 
-                   @Override
+                    @Override
                     public void error(String msg) {
                         jarInitOk = true;
                         mHandler.post(new Runnable() {
@@ -620,9 +619,9 @@ public class HomeActivity extends BaseActivity {
                 } else {
                     exit();
                 }
-              } else if (baseLazyFragment instanceof UserFragment && UserFragment.tvHotListForGrid.canScrollVertically(-1)) {
+            } else if (baseLazyFragment instanceof UserFragment && UserFragment.tvHotListForGrid.canScrollVertically(-1)) {
                 UserFragment.tvHotListForGrid.scrollToPosition(0);
-                this.mGridView.setSelection(0);   
+                this.mGridView.setSelection(0);
             } else {
                 exit();
             }
@@ -698,7 +697,7 @@ public class HomeActivity extends BaseActivity {
         boolean activated = count > 0;
         currentView.findViewById(R.id.tvFilter).setVisibility(View.VISIBLE);
         ImageView imgView = currentView.findViewById(R.id.tvFilter);
-        imgView.setColorFilter(activated ?this.getThemeColor(): Color.WHITE);
+        imgView.setColorFilter(activated ? this.getThemeColor() : Color.WHITE);
     }
 
     private final Runnable mDataRunnable = new Runnable() {
